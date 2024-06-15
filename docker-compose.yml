@@ -10,7 +10,7 @@ services:
         nginx['listen_port'] = 8088
         gitlab_rails['initial_root_password'] = 'Nishan@1'
         puma['worker_processes'] = 0 # disable cluster mode to avoid more memory usage
-      GITLAB_SHARED_RUNNERS_REGISTRATION_TOKEN: r3g1str4t10n
+      GITLAB_SHARED_RUNNERS_REGISTRATION_TOKEN: testToken1Nishan
     volumes:
       - ./gitlab/config:/etc/gitlab
       - ./gitlab/logs:/var/log/gitlab
@@ -30,7 +30,7 @@ services:
     command: ["/bin/sh", "-c", "gitlab-runner register \
                                       --non-interactive \
                                       --url 'http://localhost:8088' \
-                                      --registration-token 'r3g1str4t10n' \ 
+                                      --registration-token 'testToken1Nishan' \ 
                                       --executor 'docker' \
                                       --docker-network-mode 'host' \
                                       --docker-image 'python:alpine' \
